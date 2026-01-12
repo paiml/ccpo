@@ -1,0 +1,28 @@
+# Example configuration for Ollama provider (local models)
+# Copy this to ~/.config/ccpo/config.toml or ./config.toml
+
+[server]
+host = "0.0.0.0"
+port = 8082
+log_level = "info"
+
+[providers]
+preferred = "ollama"
+
+[providers.ollama]
+api_base = "http://localhost:11434"  # Default Ollama endpoint
+timeout_secs = 60  # Ollama can be slower for large models
+max_retries = 3
+
+[models]
+# These determine which Ollama models to use for Claude model aliases
+big = "llama3:70b"    # Used for Claude Sonnet requests
+small = "llama3:8b"   # Used for Claude Haiku requests
+
+# Optional: Override supported models list
+# [models.ollama_list]
+# supported = ["llama3", "llama3:8b", "llama3:70b", "mistral", "qwen2.5"]
+
+# Note: Make sure you have pulled these models in Ollama first:
+#   ollama pull llama3:70b
+#   ollama pull llama3:8b

@@ -1,0 +1,24 @@
+# Example configuration for OpenAI provider
+# Copy this to ~/.config/ccpo/config.toml or ./config.toml
+
+[server]
+host = "0.0.0.0"
+port = 8082
+log_level = "info"
+
+[providers]
+preferred = "openai"
+
+[providers.openai]
+api_key = "${OPENAI_API_KEY}"  # Will be replaced with env var
+timeout_secs = 30
+max_retries = 3
+
+[models]
+# These determine which OpenAI models to use for Claude model aliases
+big = "o3-mini"      # Used for Claude Sonnet requests
+small = "gpt-4o-mini"  # Used for Claude Haiku requests
+
+# Optional: Override supported models list
+# [models.openai_list]
+# supported = ["o3-mini", "gpt-4o", "gpt-4o-mini"]

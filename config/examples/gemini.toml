@@ -1,0 +1,24 @@
+# Example configuration for Google Gemini provider
+# Copy this to ~/.config/ccpo/config.toml or ./config.toml
+
+[server]
+host = "0.0.0.0"
+port = 8082
+log_level = "info"
+
+[providers]
+preferred = "google"
+
+[providers.google]
+api_key = "${GEMINI_API_KEY}"  # Will be replaced with env var
+timeout_secs = 30
+max_retries = 3
+
+[models]
+# These determine which Gemini models to use for Claude model aliases
+big = "gemini-2.5-pro-preview-03-25"  # Used for Claude Sonnet requests
+small = "gemini-2.0-flash"            # Used for Claude Haiku requests
+
+# Optional: Override supported models list
+# [models.gemini_list]
+# supported = ["gemini-2.5-pro-preview-03-25", "gemini-2.0-flash"]

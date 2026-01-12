@@ -1,0 +1,26 @@
+{
+  "model": "claude-3-sonnet-20240229",
+  "max_tokens": 1024,
+  "messages": [
+    {
+      "role": "user",
+      "content": "What is 1234 * 5678?"
+    }
+  ],
+  "tools": [
+    {
+      "name": "calculator",
+      "description": "A simple calculator that can perform basic arithmetic operations",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "expression": {
+            "type": "string",
+            "description": "The mathematical expression to evaluate (e.g., '2 + 2', '10 * 5')"
+          }
+        },
+        "required": ["expression"]
+      }
+    }
+  ]
+}

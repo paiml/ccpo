@@ -1,0 +1,36 @@
+{
+  "model": "claude-3-sonnet-20240229",
+  "max_tokens": 1024,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Hello! Can you help me with some math?"
+    },
+    {
+      "role": "assistant",
+      "content": [
+        {
+          "type": "text",
+          "text": "Of course! I'd be happy to help you with math. What would you like to calculate?"
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "content": "What's 15 + 27?"
+    },
+    {
+      "role": "assistant",
+      "content": [
+        {
+          "type": "text",
+          "text": "15 + 27 equals 42."
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "content": "And what about 42 * 2?"
+    }
+  ]
+}
